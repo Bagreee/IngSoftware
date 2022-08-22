@@ -19,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[App\Http\Controllers\RegistroVisitaController::class, 'index']);
+
+/*Route::get('/visita', function () {
+    return view('visita.index');
+});*/
+
+Route::resource('visita',App\Http\Controllers\RegistroVisitaController::class);
