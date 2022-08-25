@@ -29,6 +29,6 @@ class RegistroVisitaController extends Controller
     {
         $datosVisita = request()->except('_token');
         Visita::insert($datosVisita);
-        return response()->json($datosVisita);
+        //return response()->json($datosVisita);
     }
 }

@@ -12,4 +12,8 @@ class Departamento extends Model
     public function visitas(){     
         return $this->hasMany(Visita::class, 'id');
     }
+
+    public function encomiendas(){     
+        return $this->hasMany(Encomienda::class, 'id');
+    }
 }
