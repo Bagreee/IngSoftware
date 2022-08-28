@@ -16,4 +16,8 @@ class Departamento extends Model
     public function encomiendas(){     
         return $this->hasMany(Encomienda::class, 'id');
     }
+
+    public function trabajadorMantenimiento(){
+        return $this->hasMany(trabajadorMantenimiento::class, 'id');
+    }
 }

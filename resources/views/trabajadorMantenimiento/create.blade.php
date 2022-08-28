@@ -1,8 +1,4 @@
-Create
-
-
-
-<form action="{{ url('/encomienda') }}" method="post">
+<form action="{{ url('/trabajadorMantenimiento') }}" method="post">
 
     @csrf
 
@@ -15,14 +11,16 @@ Create
     </select>
     <br>
 
-    <label for="proveedor">Proveedor</label>
-    <input type="text" name="proveedor" id="proveedor">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre">
     <br>
 
-    <label for="estado">Estado</label>
-    <select name="estado" id="estado">
-        <option value="sin retirar">Sin retirar</option>
-    </select>
+    <label for="rut">Rut</label>
+    <input type="text" name="rut" id="rut">
+    <br>
+
+    <label for="labor">Labor</label>
+    <input type="text" name="labor" id="labor">
     <br>
 
     <input type="submit" value="Ingresar">
