@@ -27,3 +27,4 @@ use Illuminate\Support\Facades\Route;
 Route::resource('visita',App\Http\Controllers\RegistroVisitaController::class);
 Route::resource('encomienda',App\Http\Controllers\EncomiendaController::class);
 Route::resource('trabajadorMantenimiento',App\Http\Controllers\TrabajadorMantenimientoController::class);
+Route::resource('salaEvento',App\Http\Controllers\SalaEventoController::class);

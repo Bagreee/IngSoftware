@@ -1,7 +1,4 @@
 Create
-
-
-
 <form action="{{ url('/encomienda') }}" method="post">
 
     @csrf

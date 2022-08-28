@@ -18,6 +18,10 @@ class Departamento extends Model
     }
 
     public function trabajadorMantenimiento(){
-        return $this->hasMany(trabajadorMantenimiento::class, 'id');
+        return $this->hasMany(TrabajadorMantenimiento::class, 'id');
+    }
+
+    public function eventos(){     
+        return $this->hasMany(SalaEvento::class, 'id');
     }
 }
