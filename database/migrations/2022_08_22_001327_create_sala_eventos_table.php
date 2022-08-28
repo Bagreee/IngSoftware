@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_dpto')->unsigned();
             $table->string('nombre');
+            $table->date('fecha');
             $table->bigInteger('asistentes');
             $table->timestamps();
 
