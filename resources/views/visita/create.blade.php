@@ -1,35 +1,39 @@
-Formulario de ingreso de visita
+@include('header')
 
 <form action="{{ url('/visita') }}" method="post">
 
     @csrf
-<!--
-    <label for="id_dpto">Departamento de destino</label>
-    <input type="text" name="id_dpto" id="id_dpto">
-    <br>
--->
-    <label for="id_dpto">Departamento de destino</label>
-    <select name="id_dpto">
+    <div class="container">
+
+        <label for="id_dpto">Departamento de destino</label>
+        <select name="id_dpto" class="form-control">
         <option value="">Seleccione el departamento</option>
-        @foreach ($departamentos as $departamento)
-            <option value="{{ $departamento->id }}">{{ $departamento->numero }}</option>
-        @endforeach
-    </select>
-    <br>
+            @foreach ($departamentos as $departamento)
+                <option value="{{ $departamento->id }}">{{ $departamento->numero }}</option>
+            @endforeach
+        </select>
 
-    <label for="nombre">Nombre del visitante</label>
-    <input type="text" name="nombre" id="nombre">
-    <br>
+        <div class="form-group">
+            <label for="nombre">Nombre del visitante</label>
+            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+        </div>
 
-    <label for="num_estacionamiento">Numero de estacionamiento</label>
-    <input type="text" name="num_estacionamiento" id="num_estacionamiento">
-    <br>
+        <div class="form-group">
+            <label for="num_estacionamiento">Numero de estacionamiento</label>
+            <input type="text" name="num_estacionamiento" class="form-control" id="num_estacionamiento" placeholder="Estacionamiento">
+        </div>
+        
+        <div class="form-group">
+            <label for="patente">Patente del vehiculo</label>
+            <input type="text" name="patente" class="form-control" id="patente" placeholder="Patente">
+        </div>
 
-    <label for="patente">Patente del vehiculo</label>
-    <input type="text" name="patente" id="patente">
-    <br>
+        <br>
 
-    <input type="submit" value="Ingresar">
+        <input type="submit" class="btn btn-primary" value="Ingresar">
 
+    </div>
 
 </form>
+
+@include('footer')

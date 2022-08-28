@@ -1,28 +1,36 @@
-Create
+@include('header')
+
+
 <form action="{{ url('/encomienda') }}" method="post">
 
     @csrf
+    <div class="container">
 
-    <label for="id_dpto">Departamento de destino</label>
-    <select name="id_dpto">
+        <label for="id_dpto">Departamento de destino</label>
+        <select name="id_dpto" class="form-control">
         <option value="">Seleccione el departamento</option>
-        @foreach ($departamentos as $departamento)
-            <option value="{{ $departamento->id }}">{{ $departamento->numero }}</option>
-        @endforeach
-    </select>
-    <br>
+            @foreach ($departamentos as $departamento)
+                <option value="{{ $departamento->id }}">{{ $departamento->numero }}</option>
+            @endforeach
+        </select>
 
-    <label for="proveedor">Proveedor</label>
-    <input type="text" name="proveedor" id="proveedor">
-    <br>
+        <div class="form-group">
+            <label for="proveedor">Proveedor</label>
+            <input type="text" name="proveedor" class="form-control" id="proveedor" placeholder="Proveedor">
+        </div>
 
-    <label for="estado">Estado</label>
-    <select name="estado" id="estado">
-        <option value="sin retirar">Sin retirar</option>
-    </select>
-    <br>
+        <label for="estado">Estado</label>
+        <select name="estado" id="estado" class="form-control">
+            <option value="sin retirar">Sin retirar</option>
+        </select>
 
-    <input type="submit" value="Ingresar">
+        <br>
+        
+        <input type="submit" class="btn btn-primary" value="Ingresar">
 
+    </div>
 
 </form>
+
+
+@include('footer')

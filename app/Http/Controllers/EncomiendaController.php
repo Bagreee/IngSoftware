@@ -27,6 +27,7 @@ class EncomiendaController extends Controller
     {
         $datosEncomienda = request()->except('_token');
         Encomienda::insert($datosEncomienda);
+        return redirect()->route('encomienda.index');
     }
 
     public function edit($id)
