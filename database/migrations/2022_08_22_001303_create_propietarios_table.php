@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('correo');
             $table->string('telefono');
             $table->string('estado');
-            $table->timestamps();
+            $table->timestamp('fecha_ingreso')->useCurrent();
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
         });

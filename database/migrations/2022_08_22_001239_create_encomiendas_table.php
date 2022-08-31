@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('id_dpto')->unsigned();
             $table->string('proveedor');
             $table->string('estado');
-            $table->timestamps();
+            $table->timestamp('fecha_ingreso')->useCurrent();
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
         });

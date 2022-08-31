@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->bigInteger('num_estacionamiento');
             $table->string('patente');
-            $table->timestamps();
+            $table->timestamp('fecha_ingreso')->useCurrent();
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
             
