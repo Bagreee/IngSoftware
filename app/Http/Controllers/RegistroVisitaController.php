@@ -29,6 +29,6 @@ class RegistroVisitaController extends Controller
     {
         $datosVisita = request()->except('_token');
         Visita::insert($datosVisita);
-        return redirect()->route('visita.index');
+        return redirect('visita')->with('mensaje', 'Visita registrada exitosamente');
     }
 }

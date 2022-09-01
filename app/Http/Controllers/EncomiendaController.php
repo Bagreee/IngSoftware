@@ -27,7 +27,8 @@ class EncomiendaController extends Controller
     {
         $datosEncomienda = request()->except('_token');
         Encomienda::insert($datosEncomienda);
-        return redirect()->route('encomienda.index');
+        //return redirect()->route('encomienda.index');
+        return redirect('encomienda')->with('mensaje', 'Encomienda registrada exitosamente');
     }
 
     public function edit($id)
@@ -44,6 +45,6 @@ class EncomiendaController extends Controller
         $encomienda->estado = $request->input('estado');
         $encomienda->save();
 
-        return redirect()->route('encomienda.index');
+        return redirect('encomienda')->with('mensaje', 'Estado de encomienda actualizado');
     }
 }

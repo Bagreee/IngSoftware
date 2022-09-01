@@ -29,6 +29,6 @@ class SalaEventoController extends Controller
     {
         $datosEvento = request()->except('_token');
         SalaEvento::insert($datosEvento);
-        return redirect()->route('salaEvento.index');
+        return redirect('salaEvento')->with('mensaje', 'Evento registrado exitosamente');
     }
 }

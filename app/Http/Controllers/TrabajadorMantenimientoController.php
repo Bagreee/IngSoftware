@@ -29,6 +29,6 @@ class TrabajadorMantenimientoController extends Controller
     {
         $datosTrabajadorMantenimiento = request()->except('_token');
         TrabajadorMantenimiento::insert($datosTrabajadorMantenimiento);
-        return redirect()->route('trabajadorMantenimiento.index');
+        return redirect('trabajadorMantenimiento')->with('mensaje', 'Trabajador registrado exitosamente');
     }
 }
