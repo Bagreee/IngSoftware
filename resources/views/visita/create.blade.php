@@ -1,4 +1,4 @@
-@include('header')
+@include('index-header')
 
 <form action="{{ url('/visita') }}" method="post">
 
@@ -36,4 +36,4 @@
 
 </form>
 
-@include('footer')
+@include('index-footer')

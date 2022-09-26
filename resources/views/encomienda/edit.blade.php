@@ -1,4 +1,4 @@
-@include('header')
+@include('index-header')
 
 <form action="{{ route('encomienda.update', $encomienda->id) }}" method="post">
 
@@ -29,4 +29,4 @@
 
 </form>
 
-@include('footer')
+@include('index-footer')

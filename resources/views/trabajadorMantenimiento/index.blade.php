@@ -1,4 +1,4 @@
-@include('header')
+@include('index-header')
 
 @if(Session::has('mensaje'))
     <div class="alert alert-success" role="alert">
@@ -28,4 +28,4 @@
     <br>
     <a class="btn btn-primary" href="{{ url('trabajadorMantenimiento/create') }}" role="button">Registrar trabajador de mantenimiento</a>
 </div>
-@include('footer')
+@include('index-footer')
