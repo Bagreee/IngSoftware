@@ -24,4 +24,8 @@ class Departamento extends Model
     public function eventos(){     
         return $this->hasMany(SalaEvento::class, 'id');
     }
+
+    public function propietarios(){     
+        return $this->hasMany(Propietario::class, 'id');
+    }
 }
