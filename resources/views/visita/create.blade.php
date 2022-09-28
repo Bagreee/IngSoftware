@@ -15,17 +15,17 @@
 
         <div class="form-group">
             <label for="nombre">Nombre del visitante</label>
-            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+            <input type="text" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre" required>
         </div>
 
         <div class="form-group">
             <label for="num_estacionamiento">Numero de estacionamiento</label>
-            <input type="text" name="num_estacionamiento" class="form-control" id="num_estacionamiento" placeholder="Estacionamiento">
+            <input type="text" name="num_estacionamiento" class="form-control" id="num_estacionamiento" placeholder="Estacionamiento" required>
         </div>
         
         <div class="form-group">
             <label for="patente">Patente del vehiculo</label>
-            <input type="text" name="patente" class="form-control" id="patente" placeholder="Patente">
+            <input type="text" name="patente" class="form-control" id="patente" placeholder="Patente" required>
         </div>
 
         <br>

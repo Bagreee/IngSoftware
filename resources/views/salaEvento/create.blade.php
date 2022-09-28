@@ -5,7 +5,7 @@
     @csrf
     <div class="container">
 
-    <label for="id_dpto">Departamento de destino</label>
+    <label for="id_dpto">Departamento del solicitante</label>
         <select name="id_dpto" class="form-control">
         <option value="">Seleccione el departamento</option>
             @foreach ($departamentos as $departamento)
@@ -15,17 +15,17 @@
 
         <div class="form-group">
             <label for="nombre">Nombre del solicitante</label>
-            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" required>
         </div>
 
         <div class="form-group">
             <label for="fecha">Fecha del evento</label>
-            <input type="date" name="fecha" class="form-control" id="fecha" min="2022-01-01">
+            <input type="date" name="fecha" class="form-control" id="fecha" min="2022-01-01" required>
         </div>
 
         <div class="form-group">
             <label for="asistentes">Cantidad de asistentes</label>
-            <input type="text" name="asistentes" class="form-control" id="asistentes" placeholder="Asistentes">
+            <input type="text" name="asistentes" class="form-control" id="asistentes" placeholder="Asistentes" required>
         </div>
 
         <br>

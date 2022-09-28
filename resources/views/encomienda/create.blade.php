@@ -16,7 +16,7 @@
 
         <div class="form-group">
             <label for="proveedor">Proveedor</label>
-            <input type="text" name="proveedor" class="form-control" id="proveedor" placeholder="Proveedor">
+            <input type="text" name="proveedor" class="form-control" id="proveedor" placeholder="Proveedor" required>
         </div>
 
         <label for="estado">Estado</label>

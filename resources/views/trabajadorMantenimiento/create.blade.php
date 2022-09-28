@@ -15,17 +15,17 @@
 
         <div class="form-group">
             <label for="nombre">Nombre del trabajador</label>
-            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre" required>
         </div>
 
         <div class="form-group">
             <label for="rut">Rut del trabajador</label>
-            <input type="text" name="rut" class="form-control" id="rut" placeholder="Rut">
+            <input type="text" name="rut" class="form-control" id="rut" placeholder="Rut" required>
         </div>
 
         <div class="form-group">
             <label for="labor">Labor a realizar</label>
-            <input type="text" name="labor" class="form-control" id="labor" placeholder="Labor">
+            <input type="text" name="labor" class="form-control" id="labor" placeholder="Labor" required>
         </div>
 
         <br>

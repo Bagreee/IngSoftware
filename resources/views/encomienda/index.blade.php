@@ -6,6 +6,16 @@
     </div>
 @endif
 
+<br>
+Filtro 
+<select name="filtro" id="filtro">
+    <option value="">Todas las encomiendas</option>
+    <option value="retirada">Encomiendas retiradas</option>
+    <option value="sin retirar">Encomiendas sin retirar</option>
+</select>
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
+<br>
+
 <div class="container">
     <table class="table table-striped">
         <thead>
