@@ -20,6 +20,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('propietario') }}">Propietarios</a>
                 </li>
+
+                @if(auth()->check())
+
+                <div style=" padding-left: 350px">
+                    <p class="text-xl">Bienvenido <b>{{ auth()->user()->name }}</b> </p>
+                
+                    <a style="text-decoration: none; color: black"  href="{{ route('login.destroy') }}"><p>Cerrar sesion</p></a>
+                </div>
+
+                @endif
             </ul>
         </div>
     </nav>
