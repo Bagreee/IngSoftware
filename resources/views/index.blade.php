@@ -54,7 +54,7 @@
 
         </div>
         <div class="box contenido">
-            Registro
+            <!--Registro-->
         </div>
         <div class="box footer">
             
