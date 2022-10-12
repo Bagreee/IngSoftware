@@ -1,0 +1,98 @@
+.container{
+    padding: 100px;
+    
+}
+
+.logo-gesta{
+    padding-left: 30px;
+}
+
+body{
+    background-color: white;
+    text-align: center;
+}
+
+.grid-layout{
+    height: 650px;
+    display: grid;
+    grid-template-areas:    'header header'
+                            'menu-lateral contenido'
+                            'footer footer';
+    grid-template-columns: 30% auto;
+    grid-template-rows: 10% auto 10%;
+}
+
+.box{
+    text-align: center;
+    padding: 20px;
+}
+
+.header{
+    padding-top: 20px;
+    grid-area: header;
+    margin-bottom: auto;
+    background-color: white;
+}
+
+.menu-lateral{
+    border: 1px solid;
+    border-color: #659BFF;
+    grid-area: menu-lateral;
+    margin-top: 80px;
+    background-color: whitesmoke;
+}
+
+.contenido{
+    border: 1px solid;
+    border-color: #659BFF;
+    grid-area: contenido;
+    margin-top: 80px;
+    background-color: white;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: white;
+}
+
+.list-group-item{
+    border-radius: 10px;
+    height: 80px;
+}
+
+.list-group p{
+    margin-top: 15px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flex-container p{
+    padding-left: 200px;
+    font-family: Roboto 16px;
+}
+
+.header-flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-registro{
+    text-decoration: none;
+    font-family: Verdana;
+    color: #516772;
+}
+
+.btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+  }
+

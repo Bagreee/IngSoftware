@@ -42,3 +42,7 @@ Route::post('/register',[App\Http\Controllers\RegisterController::class, 'store'
 Route::get('/login',[App\Http\Controllers\SessionsController::class, 'create'])->name('login.index');
 Route::post('/login',[App\Http\Controllers\SessionsController::class, 'store'])->name('login.store');
 Route::get('/logout',[App\Http\Controllers\SessionsController::class, 'destroy'])->name('login.destroy');
+
+Route::get('/calendar', function () {
+    return view('salaEvento/calendar');
+});
