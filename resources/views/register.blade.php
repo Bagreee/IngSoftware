@@ -18,6 +18,12 @@
 
       @csrf
       <input type="text" id="name" class="fadeIn second" name="name" placeholder="Nombre">
+      <select name="role" class="fadeIn second" id="role">
+        <option value="">Selecione un rol</option>
+        <option value="conserje">Conserje</option>
+        <option value="mayordomo">Mayordomo</option>
+        <option value="juntaVecinos">Junta de vecinos</option>
+      </select>
       <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
       <input type="password" id="password_confirmation" class="fadeIn third" name="password_confirmation" placeholder="Confirme contraseña">

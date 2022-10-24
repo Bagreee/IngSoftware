@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\SessionsController;
 
 Route::get('/', function () {
     return view('index');
-});//->middleware('auth');
+})->middleware('auth');
 
 /*Route::get('/login', function () {
     return view('login');
@@ -30,11 +31,11 @@ Route::get('/', function () {
     return view('visita.index');
 });*/
 
-Route::resource('visita',App\Http\Controllers\RegistroVisitaController::class);//->middleware('auth');
-Route::resource('encomienda',App\Http\Controllers\EncomiendaController::class);//->middleware('auth');
-Route::resource('trabajadorMantenimiento',App\Http\Controllers\TrabajadorMantenimientoController::class);//->middleware('auth');
-Route::resource('salaEvento',App\Http\Controllers\SalaEventoController::class);//->middleware('auth');
-Route::resource('propietario',App\Http\Controllers\PropietarioController::class);//->middleware('auth');
+Route::resource('visita',App\Http\Controllers\RegistroVisitaController::class)->middleware('auth');
+Route::resource('encomienda',App\Http\Controllers\EncomiendaController::class)->middleware('auth');
+Route::resource('trabajadorMantenimiento',App\Http\Controllers\TrabajadorMantenimientoController::class)->middleware('auth');
+Route::resource('salaEvento',App\Http\Controllers\SalaEventoController::class)->middleware('auth');
+Route::resource('propietario',App\Http\Controllers\PropietarioController::class)->middleware('auth');
 
 Route::get('/register',[App\Http\Controllers\RegisterController::class, 'create'])->name('register.index');//->middleware('auth');
 Route::post('/register',[App\Http\Controllers\RegisterController::class, 'store'])->name('register.store');//->middleware('auth');
@@ -46,3 +47,6 @@ Route::get('/logout',[App\Http\Controllers\SessionsController::class, 'destroy']
 Route::get('/calendar', function () {
     return view('salaEvento/calendar');
 });
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+//Route::get('/conserje', [App\Http\Controllers\ConserjeController::class, 'index'])->middleware('auth')->name('admin.index');
