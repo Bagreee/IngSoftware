@@ -1,20 +1,4 @@
-@include('index-header')
-
-@if(Session::has('mensaje'))
-    <div class="alert alert-success" role="alert">
-        {{ Session::get('mensaje') }}
-    </div>
-@endif
-
-<br>
-Filtro 
-<select name="filtro" id="filtro">
-    <option value="">Todas las encomiendas</option>
-    <option value="retirada">Encomiendas retiradas</option>
-    <option value="sin retirar">Encomiendas sin retirar</option>
-</select>
-<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
-<br>
+@include('registros/home-header')
 
 <div class="container">
     <table class="table table-striped">
@@ -42,11 +26,6 @@ Filtro
     </table>
     <br>
 
-    @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
-
-        <a class="btn btn-primary" href="{{ url('encomienda/create') }}" role="button">Registrar encomienda</a>
-
-    @endif
-
 </div>
-@include('index-footer')
+
+@include('registros/home-footer')

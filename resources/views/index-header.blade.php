@@ -14,15 +14,23 @@
 
                 <a class="header-registro" href="{{ url('/') }}"><img src="../logo-gesta.jpg" class="logo-gesta"></a>
 
-                <a class="header-registro" href="{{ url('visita') }}">Visitas</a>
+                @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
 
-                <a class="header-registro" href="{{ url('encomienda') }}">Encomiendas</a>
+                    <a class="header-registro" href="{{ url('visita') }}">Visitas</a>
 
-                <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
+                    <a class="header-registro" href="{{ url('encomienda') }}">Encomiendas</a>
 
-                <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
+                    <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
 
-                <a class="header-registro" href="{{ url('propietario') }}">Propietarios</a>
+                    <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
+
+                @endif
+
+                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')
+
+                    <a class="header-registro" href="{{ url('propietario') }}">Propietarios</a>
+
+                @endif
 
                 @if(auth()->check())
 
@@ -47,8 +55,11 @@
                     <a class="list-group-item list-group-item-action" href="{{ url('trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
+
+                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('propietario/create') }}"><p>Registrar propietario</p></a>
+                @endif
                 </div>
             </div>
 

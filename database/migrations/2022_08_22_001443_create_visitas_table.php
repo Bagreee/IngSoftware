@@ -17,8 +17,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('id_dpto')->unsigned();
             $table->string('nombre');
-            $table->bigInteger('num_estacionamiento');
-            $table->string('patente');
+            $table->bigInteger('num_estacionamiento')->nullable();
+            $table->string('patente')->nullable();
             $table->timestamp('fecha_ingreso')->useCurrent();
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');

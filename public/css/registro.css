@@ -1,0 +1,134 @@
+.container{
+    padding: 100px;
+    
+}
+
+.logo-gesta{
+    padding-left: 30px;
+}
+
+.navbar{
+    padding: auto;
+}
+
+body{
+    background-color: white;
+    text-align: center;
+}
+
+.grid-layout{
+    height: 650px;
+    display: grid;
+    grid-template-areas:    'header'
+                            'contenido'
+                            'footer';
+    grid-template-rows: 10% auto 10%;
+}
+
+.box{
+    text-align: center;
+    padding: 20px;
+}
+
+.header{
+    padding-top: 20px;
+    grid-area: header;
+    margin-bottom: auto;
+    background-color: white;
+}
+
+.contenido{
+    border: 1px solid;
+    border-color: #659BFF;
+    grid-area: contenido;
+    margin-top: 80px;
+    background-color: white;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: white;
+}
+
+.list-group-item{
+    border-radius: 10px;
+    height: 80px;
+}
+
+.list-group p{
+    margin-top: 15px;
+}
+
+.navbar-brand{
+    padding-left: 100px;
+}
+
+.navbar-collapse li{
+    padding-left: 50px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flex-container p{
+    padding-left: 200px;
+    font-family: Roboto 16px;
+}
+
+.nav-link{
+    font-family: Verdana;
+}
+
+.header-flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-registro{
+    text-decoration: none;
+    font-family: Verdana;
+    color: #516772;
+}
+
+.btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+  }
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .btn:hover, .dropdown:hover .btn {
+    background-color: #0b7dda;
+  }

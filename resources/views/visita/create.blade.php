@@ -20,12 +20,12 @@
 
         <div class="form-group">
             <label for="num_estacionamiento">Numero de estacionamiento</label>
-            <input type="text" name="num_estacionamiento" class="form-control" id="num_estacionamiento" placeholder="Estacionamiento" required>
+            <input type="text" name="num_estacionamiento" class="form-control" id="num_estacionamiento" placeholder="Estacionamiento">
         </div>
         
         <div class="form-group">
             <label for="patente">Patente del vehiculo</label>
-            <input type="text" name="patente" class="form-control" id="patente" placeholder="Patente" required>
+            <input type="text" name="patente" class="form-control" id="patente" placeholder="Patente">
         </div>
 
         <br>

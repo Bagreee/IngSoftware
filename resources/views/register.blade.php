@@ -17,12 +17,13 @@
     <form method="POST" action="">
 
       @csrf
-      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Nombre">
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Nombre">   
       <select name="role" class="fadeIn second" id="role">
         <option value="">Selecione un rol</option>
         <option value="conserje">Conserje</option>
         <option value="mayordomo">Mayordomo</option>
-        <option value="juntaVecinos">Junta de vecinos</option>
+        <option value="juntaDeVecinos">Junta de vecinos</option>
+        <option value="admin">Administrador</option>
       </select>
       <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">

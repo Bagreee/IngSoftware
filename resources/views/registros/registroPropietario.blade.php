@@ -1,4 +1,4 @@
-@include('index-header')
+@include('registros/home-header')
 
 @if(Session::has('mensaje'))
     <div class="alert alert-success" role="alert">
@@ -28,19 +28,16 @@
                 <td>{{$propietario->telefono}}</td>
                 <td>{{$propietario->estado}}</td>
                 @if(auth()->user()->role == 'admin' or auth()->user()->role == 'mayordomo')
-                    <td><a class="btn btn-warning" href="{{ route('propietario.edit', $propietario->id) }}">Editar</a></td>
+                    <td><a class="btn btn-warning" href="{{ route('registros.modificarPropietario', $propietario->id) }}">Editar</a></td>
                 @endif
             </tr>
             @endforeach
         </tbody>
     </table>
     <br>
-
-    @if(auth()->user()->role == 'admin' or auth()->user()->role == 'mayordomo')
-
-        <a class="btn btn-primary" href="{{ url('propietario/create') }}" role="button">Registrar propietario</a>
-
-    @endif
-
+<!--
+    <a class="btn btn-primary" href="{{ url('registros/crearPropietario') }}" role="button">Registrar propietario</a>
+-->
 </div>
-@include('index-footer')
+
+@include('registros/home-footer')

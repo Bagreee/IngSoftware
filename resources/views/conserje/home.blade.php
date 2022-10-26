@@ -12,25 +12,15 @@
         <div class="box header">
             <div class="header-flex-container">
 
-                <a class="header-registro" href="{{ url('/') }}"><img src="../logo-gesta.jpg" class="logo-gesta"></a>
+                <a class="header-registro" href="{{ url('/conserje') }}"><img src="../logo-gesta.jpg" class="logo-gesta"></a>
 
-                @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
+                <a class="header-registro" href="{{ url('conserje/visita') }}">Visitas</a>
 
-                <a class="header-registro" href="{{ url('visita') }}">Visitas</a>
+                <a class="header-registro" href="{{ url('conserje/encomienda') }}">Encomiendas</a>
 
-                <a class="header-registro" href="{{ url('encomienda') }}">Encomiendas</a>
+                <a class="header-registro" href="{{ url('conserje/trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
 
-                <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
-
-                <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
-
-                @endif
-
-                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')
-
-                <a class="header-registro" href="{{ url('propietario') }}">Propietarios</a>
-
-                @endif
+                <a class="header-registro" href="{{ url('conserje/salaEvento') }}">Eventos</a>
 
                 @if(auth()->check())
 
@@ -48,24 +38,20 @@
             
             <div class="container">
                 <div id="list-example" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{{ url('visita/create') }}"><p>Registrar visitante</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('conserje/visita/create') }}"><p>Registrar visitante</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('encomienda/create') }}"><p>Registrar encomienda</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('conserje/encomienda/create') }}"><p>Registrar encomienda</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('conserje/trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
-
-                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')    
-                <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('propietario/create') }}"><p>Registrar propietario</p></a>
-                @endif
+                    <a class="list-group-item list-group-item-action" href="{{ url('conserje/salaEvento/create') }}"><p>Agendar evento</p></a>
                 </div>
             </div>
 
         </div>
         <div class="box contenido">
             <!--Registro-->
+            home conserje
         </div>
         <div class="box footer">
             

@@ -1,10 +1,4 @@
-@include('index-header')
-
-@if(Session::has('mensaje'))
-    <div class="alert alert-success" role="alert">
-        {{ Session::get('mensaje') }}
-    </div>
-@endif
+@include('registros/home-header')
 
 <div class="container">
     <table class="table table-striped">
@@ -27,11 +21,6 @@
     </table>
     <br>
 
-    @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
-
-        <a class="btn btn-primary" href="{{ url('trabajadorMantenimiento/create') }}" role="button">Registrar trabajador de mantenimiento</a>
-
-    @endif
-
 </div>
-@include('index-footer')
+
+@include('registros/home-footer')

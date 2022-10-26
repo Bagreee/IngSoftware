@@ -25,13 +25,26 @@ class SessionsController extends Controller
 
             if(auth()->user()->role == 'admin'){
 
-                return redirect()->route('admin.index');
+                return redirect()->to('/registros');
 
             }
-            elseif(auth()->user()->role == 'admin'){
+            elseif(auth()->user()->role == 'conserje'){
 
                 return redirect()->to('/');
 
+            }
+            elseif(auth()->user()->role == 'mayordomo'){
+
+                return redirect()->to('/');
+
+            }
+            elseif(auth()->user()->role == 'juntaDeVecinos'){
+
+                return redirect()->to('/registros');
+
+            }
+            else{
+                return redirect()->to('/login');
             }
 
         }

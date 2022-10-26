@@ -9,6 +9,6 @@ class ConserjeController extends Controller
     //
     public function index(){
 
-        return 'Conserje';
+        return view('conserje/home');
     }
 }
