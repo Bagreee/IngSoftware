@@ -26,7 +26,7 @@
 
                 @endif
 
-                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')
+                @if(auth()->user()->role == 'mayordomo')
 
                     <a class="header-registro" href="{{ url('propietario') }}">Propietarios</a>
 
@@ -56,7 +56,7 @@
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
 
-                @if(auth()->user()->role == 'mayordomo' or auth()->user()->role == 'admin')
+                @if(auth()->user()->role == 'mayordomo')
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('propietario/create') }}"><p>Registrar propietario</p></a>
                 @endif

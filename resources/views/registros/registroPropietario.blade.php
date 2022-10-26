@@ -1,11 +1,5 @@
 @include('registros/home-header')
 
-@if(Session::has('mensaje'))
-    <div class="alert alert-success" role="alert">
-        {{ Session::get('mensaje') }}
-    </div>
-@endif
-
 <div class="container">
     <table class="table table-striped">
         <thead>
@@ -26,18 +20,13 @@
                 <td>{{$propietario->apellido}}</td>
                 <td>{{$propietario->correo}}</td>
                 <td>{{$propietario->telefono}}</td>
-                <td>{{$propietario->estado}}</td>
-                @if(auth()->user()->role == 'admin' or auth()->user()->role == 'mayordomo')
-                    <td><a class="btn btn-warning" href="{{ route('registros.modificarPropietario', $propietario->id) }}">Editar</a></td>
-                @endif
+                <td>{{$propietario->estado}}</td>                
             </tr>
             @endforeach
         </tbody>
     </table>
     <br>
-<!--
-    <a class="btn btn-primary" href="{{ url('registros/crearPropietario') }}" role="button">Registrar propietario</a>
--->
+
 </div>
 
 @include('registros/home-footer')
