@@ -141,3 +141,10 @@ body{
   .btn:hover, .dropdown:hover .btn {
     background-color: #0b7dda;
   }
+
+.logo-home{
+
+    width: 700px;
+    opacity: 0.3;
+
+}

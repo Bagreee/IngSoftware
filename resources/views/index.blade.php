@@ -65,7 +65,9 @@
 
         </div>
         <div class="box contenido">
-            <!--Registro-->
+
+            <img src="../gesta-login.jpg" class="logo-home">          
+
         </div>
         <div class="box footer">
             
