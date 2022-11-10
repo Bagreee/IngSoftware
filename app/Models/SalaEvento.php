@@ -12,4 +12,15 @@ class SalaEvento extends Model
     public function departamentos(){
         return $this->belongsTo(Departamento::class, 'id_dpto');
     }
+
+    static $rules=[
+        'id_dpto' => 'required',
+        'title' => 'required',
+        'asistentes' => 'required',
+        'start' => 'required',
+        'end' => 'required'
+        
+    ];
+
+    protected $fillable=['id_dpto', 'title', 'asistentes', 'start', 'end'];
 }

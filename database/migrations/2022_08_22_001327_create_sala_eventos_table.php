@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('sala_eventos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('id_dpto')->unsigned();
-            $table->string('nombre');
-            $table->date('fecha');
+            $table->string('title');
             $table->bigInteger('asistentes');
-            $table->timestamp('fecha_ingreso')->useCurrent();
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->timestamps();
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
         });

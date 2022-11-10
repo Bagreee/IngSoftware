@@ -93,3 +93,14 @@ Route::get('/registroTrabMant',[App\Http\Controllers\RegistroTrabMantController:
 })->middleware('auth.admin');*/
 
 Route::get('/registroVisita',[App\Http\Controllers\RegistrosVisitasController::class, 'index'])->middleware('auth.admin');
+
+
+
+Route::get('/calendario',[App\Http\Controllers\CalendarioController::class, 'index']);
+Route::get('/calendario/show',[App\Http\Controllers\CalendarioController::class, 'show']);
+Route::post('/calendario/create',[App\Http\Controllers\CalendarioController::class, 'store']);
+Route::post('/calendario/edit/{id}',[App\Http\Controllers\CalendarioController::class, 'edit']);
+Route::post('/calendario/update/{evento}',[App\Http\Controllers\CalendarioController::class, 'update']);
+Route::post('/calendario/destroy/{id}',[App\Http\Controllers\CalendarioController::class, 'destroy']);
+//Route::get('/calendario',[App\Http\Controllers\CalendarioController::class, 'create']);
+
