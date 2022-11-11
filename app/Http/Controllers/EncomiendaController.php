@@ -9,8 +9,11 @@ use App\Models\Encomienda;
 class EncomiendaController extends Controller
 {
     //
+    //const PAGINACION=20;
     public function index(){
         $encomiendas = Encomienda::all();
+
+        //$encomiendas = Encomienda::where('estado','!=','null')->paginate($this::PAGINACION);
 
         return view('encomienda.index', compact('encomiendas'));
     }

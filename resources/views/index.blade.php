@@ -22,7 +22,7 @@
 
                 <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
 
-                <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
+                <a class="header-registro" href="{{ url('calendario') }}">Eventos</a>
 
                 @endif
 
@@ -54,7 +54,7 @@
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('calendario') }}"><p>Agendar evento</p></a>
 
                 @if(auth()->user()->role == 'mayordomo')    
                 <br>

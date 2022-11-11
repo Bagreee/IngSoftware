@@ -36,16 +36,23 @@
 
                 <a class="header-registro" href="{{ url('/') }}"><img src="../logo-gesta.jpg" class="logo-gesta"></a>
 
+                @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
+
                 <a class="header-registro" href="{{ url('visita') }}">Visitas</a>
 
                 <a class="header-registro" href="{{ url('encomienda') }}">Encomiendas</a>
 
                 <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
 
-                <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
+                <a class="header-registro" href="{{ url('calendario') }}">Eventos</a>
+
+                @endif
+
+                @if(auth()->user()->role == 'mayordomo')
 
                 <a class="header-registro" href="{{ url('propietario') }}">Propietarios</a>
 
+                @endif
                 @if(auth()->check())
 
                 <div class="header-session">
@@ -68,9 +75,12 @@
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
-                <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('propietario/create') }}"><p>Registrar propietario</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('calendario') }}"><p>Agendar evento</p></a>
+                
+                    @if(auth()->user()->role == 'mayordomo')    
+                        <br>
+                            <a class="list-group-item list-group-item-action" href="{{ url('propietario/create') }}"><p>Registrar propietario</p></a>
+                        @endif
                 </div>
             </div>
 

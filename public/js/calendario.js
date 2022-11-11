@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       displayEventTime:false,
       headerToolbar:{
         start: 'title',
-        center: 'list',
-        end: 'today dayGridMonth,timeGridWeek,timeGridDay prev,next'
+        end: 'today prev,next'
       },
 
       events: baseURL+"/calendario/show",

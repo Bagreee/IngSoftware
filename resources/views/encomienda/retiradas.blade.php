@@ -16,11 +16,9 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnFiltrar">Filtrar</button>
 </form>-->
 
-
+<h1>Encomiendas retiradas</h1>
 
 <br>
-
-<h1>Encomiendas sin retirar</h1>
 
 <div class="container">
 
@@ -29,17 +27,19 @@
             <th>proveedor</th>
             <th>Num Dpto</th>
             <th>Estado</th>
+            <th>Fecha de retiro</th>
         </thead>
         <tbody>
             @foreach($encomiendas as $encomienda)
 
-            @if($encomienda->estado == 'sin retirar')
+            @if($encomienda->estado == 'retirada')
 
             <tr>
                 
                 <td>{{$encomienda->proveedor}}</td>
                 <td>{{$encomienda->departamentos->numero}}</td>
                 <td>{{$encomienda->estado}}</td>
+                <td>{{$encomienda->updated_at}}</td>
 
                 @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
 
@@ -65,7 +65,7 @@
 
     @endif
 
-    <a class="btn btn-success" href="{{ url('retiradas') }}" role="button">Encomiendas retiradas</a>
+    <a class="btn btn-success" href="{{ url('encomienda') }}" role="button">Encomiendas sin retirar</a>
 
 </div>
 @include('index-footer')

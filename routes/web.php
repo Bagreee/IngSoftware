@@ -38,6 +38,7 @@ Route::get('/', function () {
 
 Route::resource('visita',App\Http\Controllers\RegistroVisitaController::class)->middleware('auth');
 Route::resource('encomienda',App\Http\Controllers\EncomiendaController::class)->middleware('auth');
+Route::resource('retiradas',App\Http\Controllers\EncomiendaRetiradaController::class)->middleware('auth');//
 Route::resource('trabajadorMantenimiento',App\Http\Controllers\TrabajadorMantenimientoController::class)->middleware('auth');
 Route::resource('salaEvento',App\Http\Controllers\SalaEventoController::class)->middleware('auth');
 Route::resource('propietario',App\Http\Controllers\PropietarioController::class)->middleware('auth');
@@ -96,11 +97,10 @@ Route::get('/registroVisita',[App\Http\Controllers\RegistrosVisitasController::c
 
 
 
-Route::get('/calendario',[App\Http\Controllers\CalendarioController::class, 'index']);
-Route::get('/calendario/show',[App\Http\Controllers\CalendarioController::class, 'show']);
-Route::post('/calendario/create',[App\Http\Controllers\CalendarioController::class, 'store']);
-Route::post('/calendario/edit/{id}',[App\Http\Controllers\CalendarioController::class, 'edit']);
-Route::post('/calendario/update/{evento}',[App\Http\Controllers\CalendarioController::class, 'update']);
-Route::post('/calendario/destroy/{id}',[App\Http\Controllers\CalendarioController::class, 'destroy']);
+Route::get('/calendario',[App\Http\Controllers\CalendarioController::class, 'index'])->middleware('auth');
+Route::get('/calendario/show',[App\Http\Controllers\CalendarioController::class, 'show'])->middleware('auth');
+Route::post('/calendario/create',[App\Http\Controllers\CalendarioController::class, 'store'])->middleware('auth');
+Route::post('/calendario/edit/{id}',[App\Http\Controllers\CalendarioController::class, 'edit'])->middleware('auth');
+Route::post('/calendario/update/{evento}',[App\Http\Controllers\CalendarioController::class, 'update'])->middleware('auth');
+Route::post('/calendario/destroy/{id}',[App\Http\Controllers\CalendarioController::class, 'destroy'])->middleware('auth');
 //Route::get('/calendario',[App\Http\Controllers\CalendarioController::class, 'create']);
-

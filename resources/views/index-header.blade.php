@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/filtro.js"></script>
+    
+    
     <title>Document</title>
 </head>
 <body class="grid-layout">
@@ -22,7 +28,7 @@
 
                     <a class="header-registro" href="{{ url('trabajadorMantenimiento') }}">Trabajadores de mantenimiento</a>
 
-                    <a class="header-registro" href="{{ url('salaEvento') }}">Eventos</a>
+                    <a class="header-registro" href="{{ url('calendario') }}">Eventos</a>
 
                 @endif
 
@@ -54,7 +60,7 @@
                 <br>
                     <a class="list-group-item list-group-item-action" href="{{ url('trabajadorMantenimiento/create') }}"><p>Registrar trabajador de mantenimiento</p></a>
                 <br>
-                    <a class="list-group-item list-group-item-action" href="{{ url('salaEvento/create') }}"><p>Agendar evento</p></a>
+                    <a class="list-group-item list-group-item-action" href="{{ url('calendario') }}"><p>Agendar evento</p></a>
 
                 @if(auth()->user()->role == 'mayordomo')
                 <br>
