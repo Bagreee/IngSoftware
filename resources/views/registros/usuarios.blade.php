@@ -10,13 +10,15 @@
         </thead>
         <tbody>
             @foreach($trabajadores as $trabajador)
-            <tr>
-                <td>{{$trabajador->id}}</td>
-                <td>{{$trabajador->name}}</td>
-                <td>{{$trabajador->role}}</td>
-                <td>{{$trabajador->email}}</td>
-                <td><a class="btn btn-warning" href="{{ route('register.edit', $trabajador->id) }}">Editar</a></td>
-            </tr>
+                @if($trabajador->role != 'admin')
+                    <tr>
+                        <td>{{$trabajador->id}}</td>
+                        <td>{{$trabajador->name}}</td>
+                        <td>{{$trabajador->role}}</td>
+                        <td>{{$trabajador->email}}</td>
+                        <td><a class="btn btn-warning" href="{{ route('register.edit', $trabajador->id) }}">Editar</a></td>
+                    </tr>
+                @endif
             @endforeach
         </tbody>
     </table>
