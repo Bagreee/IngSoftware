@@ -34,6 +34,8 @@
 
                 <a class="header-registro" href="{{ url('/registroPropietario') }}">Propietarios</a>
 
+                <a class="header-registro" href="{{ url('/usuarios') }}">Trabajadores</a>
+
                 @endif
 
                 @if(auth()->check())

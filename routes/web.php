@@ -46,6 +46,15 @@ Route::resource('propietario',App\Http\Controllers\PropietarioController::class)
 Route::get('/register',[App\Http\Controllers\RegisterController::class, 'create'])->name('register.index');//->middleware('auth');
 Route::post('/register',[App\Http\Controllers\RegisterController::class, 'store'])->name('register.store');//->middleware('auth');
 
+Route::get('usuarios',[App\Http\Controllers\RegisterController::class, 'index'])->middleware('auth.admin');
+Route::get('/register/edit/{id}',[App\Http\Controllers\RegisterController::class, 'edit'])->middleware('auth.admin')->name('register.edit');
+Route::put('/register/update/{trabajador}',[App\Http\Controllers\RegisterController::class, 'update'])->name('register.update');
+
+
+
+
+
+
 Route::get('/login',[App\Http\Controllers\SessionsController::class, 'create'])->name('login.index');
 Route::post('/login',[App\Http\Controllers\SessionsController::class, 'store'])->name('login.store');
 Route::get('/logout',[App\Http\Controllers\SessionsController::class, 'destroy'])->name('login.destroy');

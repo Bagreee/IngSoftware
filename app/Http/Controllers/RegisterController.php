@@ -8,6 +8,16 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     //
+
+    public function index()
+    {
+
+        $trabajadores = User::all();
+        
+        return view('registros.usuarios', compact('trabajadores'));
+
+    }
+
     public function create(){
 
         return view('register');
@@ -20,6 +30,27 @@ class RegisterController extends Controller
 
         //auth()->login($user);
         return redirect()->to('/login');
+
+    }
+
+    public function edit($id)
+    {
+
+        $trabajador = User::find($id);
+
+        return view('registros.editarUsuario',compact('trabajador'));
+
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $trabajador = User::findOrFail($id);
+        $trabajador->role = $request->input('role');
+        $trabajador->email = $request->input('email');
+        $trabajador->save();
+
+        return redirect('usuarios');
 
     }
 

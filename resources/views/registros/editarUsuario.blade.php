@@ -12,7 +12,7 @@
         <div class="box header">
             <div class="header-flex-container">
 
-                <a class="header-registro" href="{{ url('/registros') }}"><img src="../logo-gesta.jpg" class="logo-gesta"></a>
+                <a class="header-registro" href="{{ url('/registros') }}"><img src="http://gestachile.cl/wp-content/uploads/2018/07/logo-gesta.jpg" class="logo-gesta"></a>
 
                 @if(auth()->user()->role == 'juntaDeVecinos')
 
@@ -54,14 +54,43 @@
         <div class="box contenido">
             <!--Registro-->
 
-            <img src="../gesta-login.jpg" class="logo-home">
+            <form action="{{ route('register.update', $trabajador->id) }}" method="post">
+
+                @csrf
+                @method('PUT')
+                <div class="container">
+
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" class="form-control" id="name" value="{{ $trabajador->name }}" readonly>
+                    </div>
+
+                    <label for="role">Rol</label>
+                    <select name="role" id="role" class="form-control">
+                        <option value="conserje">Conserje</option>
+                        <option value="mayordomo">Mayordomo</option>
+                    </select>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" value="{{ $trabajador->email }}">
+                    </div>
+
+                    <br>
+
+                    <input type="submit" class="btn btn-primary" value="Editar">
+
+
+                </div>
+
+            </form>
 
         </div>
         <div class="box footer">
             
             <section class="flex-container">
                 <div class="datos-footer">
-                    <img src="../gesta-footer.jpg" class="gesta-footer">
+                    <img src="http://gestachile.cl/wp-content/uploads/2018/07/gesta-footer.jpg" class="gesta-footer">
                 </div>
 
                 <div class="datos-footer">
