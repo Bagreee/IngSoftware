@@ -22,6 +22,8 @@
     </table>
     <br>
 
+    <a class="btn btn-primary" href="{{ url('register') }}" role="button">Registrar trabajador</a>
+
 </div>
 
 @include('registros/home-footer')

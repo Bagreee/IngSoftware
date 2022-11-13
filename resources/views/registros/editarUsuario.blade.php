@@ -58,19 +58,19 @@
 
                 @csrf
                 @method('PUT')
-                <div class="container">
+                <div class="container" style="width: 700px; background-color: #EDE8E7; border-radius: 10px; border-color: black;">
 
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input type="text" name="name" class="form-control" id="name" value="{{ $trabajador->name }}" readonly>
                     </div>
-
+                    <br>
                     <label for="role">Rol</label>
                     <select name="role" id="role" class="form-control">
                         <option value="conserje">Conserje</option>
                         <option value="mayordomo">Mayordomo</option>
                     </select>
-
+                    <br>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" name="email" class="form-control" id="email" value="{{ $trabajador->email }}">
