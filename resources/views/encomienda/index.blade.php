@@ -7,16 +7,6 @@
 @endif
 
 <br>
-<!--<form class="form-inline my-2 my-lg-0">
-    <select name="estado" id="estado">
-        <option value="">Todas las encomiendas</option>
-        <option value="{{ $estado = 'retirada' }}">Encomiendas retiradas</option>
-        <option value="{{ $estado = 'sin retirar' }}">Encomiendas sin retirar</option>
-    </select>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="btnFiltrar">Filtrar</button>
-</form>-->
-
-
 
 <br>
 
@@ -29,6 +19,7 @@
             <th>proveedor</th>
             <th>Num Dpto</th>
             <th>Estado</th>
+            <!--<th>Correo</th>-->
         </thead>
         <tbody>
             @foreach($encomiendas as $encomienda)
@@ -40,7 +31,11 @@
                 <td>{{$encomienda->proveedor}}</td>
                 <td>{{$encomienda->departamentos->numero}}</td>
                 <td>{{$encomienda->estado}}</td>
-
+                <!--@foreach($propietarios as $propietario)
+                    @if($encomienda->id_dpto == $propietario->id_dpto)
+                    <td>{{$propietario->correo}}</td>
+                    @endif
+                @endforeach-->
                 @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
 
                     @if($encomienda->estado == 'sin retirar')
@@ -55,6 +50,7 @@
 
             @endforeach
         </tbody>
+
     </table>
 
     <br>
