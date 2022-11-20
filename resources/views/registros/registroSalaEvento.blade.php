@@ -1,21 +1,19 @@
 @include('registros/home-header')
 
-<div class="container">
+<div class="container" style="width: 1100px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
     <table class="table table-striped">
         <thead>
-            <th>ID</th>
             <th>Nombre del organizador</th>
-            <th>Num Dpto</th>
+            <th>Departamento</th>
             <th>Fecha</th>
             <th>Cantidad de asistentes</th>
         </thead>
         <tbody>
             @foreach($eventos as $evento)
             <tr>
-                <td>{{$evento->id}}</td>
-                <td>{{$evento->nombre}}</td>
+                <td>{{$evento->title}}</td>
                 <td>{{$evento->departamentos->numero}}</td>
-                <td>{{$evento->fecha}}</td>
+                <td>{{$evento->start}}</td>
                 <td>{{$evento->asistentes}}</td>
             </tr>
             @endforeach

@@ -6,27 +6,23 @@
     </div>
 @endif
 
-<div class="container">
+<div class="container" style="width: 1000px;">
     <table class="table table-striped">
         <thead>
-            <th>ID</th>
-            <th>Num Dpto</th>
+            <th>Departamento</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Correo</th>
             <th>Telefono</th>
-            <th>Estado</th>
         </thead>
         <tbody>
             @foreach($propietarios as $propietario)
             <tr>
-                <td>{{$propietario->id}}</td>
                 <td>{{$propietario->departamentos->numero}}</td>
                 <td>{{$propietario->nombre}}</td>
                 <td>{{$propietario->apellido}}</td>
                 <td>{{$propietario->correo}}</td>
                 <td>{{$propietario->telefono}}</td>
-                <td>{{$propietario->estado}}</td>
                 @if(auth()->user()->role == 'admin' or auth()->user()->role == 'mayordomo')
                     <td><a class="btn btn-warning" href="{{ route('propietario.edit', $propietario->id) }}">Editar</a></td>
                 @endif

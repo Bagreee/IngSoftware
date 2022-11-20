@@ -1,10 +1,9 @@
 @include('registros/home-header')
 
-<div class="container">
+<div class="container" style="width: 1300px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
     <table class="table table-striped">
         <thead>
-            <th>ID</th>
-            <th>Num Dpto</th>
+            <th>Departamento</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Correo</th>
@@ -14,7 +13,6 @@
         <tbody>
             @foreach($propietarios as $propietario)
             <tr>
-                <td>{{$propietario->id}}</td>
                 <td>{{$propietario->departamentos->numero}}</td>
                 <td>{{$propietario->nombre}}</td>
                 <td>{{$propietario->apellido}}</td>

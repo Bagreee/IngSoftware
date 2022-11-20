@@ -3,7 +3,7 @@
 <form action="{{ url('/propietario') }}" method="post">
 
     @csrf
-    <div class="container">
+    <div class="container" style="width: 600px;">
 
         <label for="id_dpto">Departamento</label>
         <select name="id_dpto" class="form-control">

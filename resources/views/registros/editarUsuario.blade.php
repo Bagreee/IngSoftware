@@ -58,7 +58,7 @@
 
                 @csrf
                 @method('PUT')
-                <div class="container" style="width: 700px; background-color: #EDE8E7; border-radius: 10px; border-color: black;">
+                <div class="container" style="width: 700px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
 
                     <div class="form-group">
                         <label for="name">Nombre</label>

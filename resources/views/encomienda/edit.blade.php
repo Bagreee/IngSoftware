@@ -59,7 +59,7 @@
 
                 @csrf
                 @method('PUT')
-                <div class="container">
+                <div class="container" style="width: 600px;">
 
                     <div class="form-group">
                         <label for="id_dpto">Num Dpto</label>

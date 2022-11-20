@@ -12,12 +12,12 @@
 
 <h1>Encomiendas sin retirar</h1>
 
-<div class="container">
+<div class="container" style="width: 900px;">
 
     <table class="table table-striped table-flex">
         <thead>
             <th>proveedor</th>
-            <th>Num Dpto</th>
+            <th>Departamento</th>
             <th>Estado</th>
             <!--<th>Correo</th>-->
         </thead>
