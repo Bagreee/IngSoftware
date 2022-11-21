@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Departamento;
 use App\Models\Propietario;
+use App\Models\User;
 
 class PropietarioController extends Controller
 {
@@ -29,6 +30,7 @@ class PropietarioController extends Controller
     public function store(Request $request)
     {
         $datosPropietario = request()->except('_token');
+        $datosPropietario['trabajador'] = auth()->user()->name;
         Propietario::insert($datosPropietario);
         return redirect('propietario')->with('mensaje', 'Propietario registrado exitosamente');
     }

@@ -1,17 +1,19 @@
 @include('registros/home-header')
 
-<div class="container" style="width: 900px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
+<div class="container" style="width: 1000px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
     <table class="table table-striped">
         <thead>
-            <th>proveedor</th>
             <th>Departamento</th>
+            <th>proveedor</th>
+            <th>Registrado por</th>
             <th>Estado</th>
         </thead>
         <tbody>
             @foreach($encomiendas as $encomienda)
             <tr>
-                <td>{{$encomienda->proveedor}}</td>
                 <td>{{$encomienda->departamentos->numero}}</td>
+                <td>{{$encomienda->proveedor}}</td>
+                <td>{{$encomienda->trabajador}}</td>
                 <td>{{$encomienda->estado}}</td>
 
                 @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')

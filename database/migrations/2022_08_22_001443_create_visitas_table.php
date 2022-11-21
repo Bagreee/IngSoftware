@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('num_estacionamiento')->nullable();
             $table->string('patente')->nullable();
             $table->timestamp('fecha_ingreso')->useCurrent();
+            $table->string('trabajador');
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
             

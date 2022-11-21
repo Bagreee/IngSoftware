@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Departamento;
 use App\Models\TrabajadorMantenimiento;
+use App\Models\User;
 
 class TrabajadorMantenimientoController extends Controller
 {
@@ -28,6 +29,7 @@ class TrabajadorMantenimientoController extends Controller
     public function store(Request $request)
     {
         $datosTrabajadorMantenimiento = request()->except('_token');
+        $datosTrabajadorMantenimiento['trabajador'] = auth()->user()->name;
         TrabajadorMantenimiento::insert($datosTrabajadorMantenimiento);
         return redirect('trabajadorMantenimiento')->with('mensaje', 'Trabajador registrado exitosamente');
     }

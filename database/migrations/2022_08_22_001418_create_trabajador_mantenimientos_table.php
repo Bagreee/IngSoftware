@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('rut');
             $table->text('labor');
             $table->timestamp('fecha_ingreso')->useCurrent();
+            $table->string('trabajador');
 
             $table->foreign('id_dpto')->references('id')->on('departamentos');
         });

@@ -1,16 +1,18 @@
 @include('registros/home-header')
 
-<div class="container" style="width: 750px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
+<div class="container" style="width: 850px; background-color: #F0F9FC; border-radius: 10px; border-color: black; border: 1px solid black;">
     <table class="table table-striped">
         <thead>
-            <th>Nombre</th>
             <th>Departamento</th>
+            <th>Nombre</th>
+            <th>Registrado por</th>
         </thead>
         <tbody>
             @foreach($visitas as $visita)
             <tr>
-                <td>{{$visita->nombre}}</td>
                 <td>{{$visita->departamentos->numero}}</td>
+                <td>{{$visita->nombre}}</td>
+                <td>{{$visita->trabajador}}</td>
             </tr>
             @endforeach
         </tbody>
