@@ -24,6 +24,9 @@
             @endforeach
         </tbody>
     </table>
+    <div style="display: flex; justify-content: center;">
+        {!! $encomiendas->links() !!}
+    </div>
     <br>
 
 </div>

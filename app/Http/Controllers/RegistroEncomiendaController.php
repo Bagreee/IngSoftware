@@ -11,9 +11,10 @@ class RegistroEncomiendaController extends Controller
     //
 
     public function index(){
-        $encomiendas = Encomienda::all();
+        //$encomiendas = Encomienda::all();
+        $datos['encomiendas'] = Encomienda::paginate(6);
 
-        return view('registros.registroEncomienda', compact('encomiendas'));
+        return view('registros.registroEncomienda', $datos);
     }
 
 }

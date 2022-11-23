@@ -12,9 +12,10 @@ class RegistroTrabMantController extends Controller
 
     public function index()
     {
-        $trabajadoresMantenimiento = TrabajadorMantenimiento::all();
+        //$trabajadoresMantenimiento = TrabajadorMantenimiento::all();
+        $datos['trabajadoresMantenimiento'] = TrabajadorMantenimiento::paginate(6);
 
-        return view('registros.registroTrabMant', compact('trabajadoresMantenimiento'));
+        return view('registros.registroTrabMant', $datos);
     }
 
 }

@@ -12,9 +12,10 @@ class TrabajadorMantenimientoController extends Controller
     //
     public function index()
     {
-        $trabajadoresMantenimiento = TrabajadorMantenimiento::all();
+        //$trabajadoresMantenimiento = TrabajadorMantenimiento::all();
+        $datos['trabajadoresMantenimiento'] = TrabajadorMantenimiento::paginate(5);
 
-        return view('trabajadorMantenimiento.index', compact('trabajadoresMantenimiento'));
+        return view('trabajadorMantenimiento.index', $datos);
     }
 
     public function create()

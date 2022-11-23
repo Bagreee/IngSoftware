@@ -16,12 +16,12 @@ class EncomiendaController extends Controller
     //
     //const PAGINACION=20;
     public function index(){
-        $encomiendas = Encomienda::all();
-        $propietarios = Propietario::all();
+        //$encomiendas = Encomienda::all();
+        //$propietarios = Propietario::all();
 
-        //$encomiendas = Encomienda::where('estado','!=','null')->paginate($this::PAGINACION);
+        $datos['encomiendas'] = Encomienda::paginate(3);
 
-        return view('encomienda.index', compact('encomiendas', 'propietarios'));
+        return view('encomienda.index', $datos);
     }
 
     public function create(){

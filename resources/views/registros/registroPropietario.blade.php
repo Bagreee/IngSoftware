@@ -25,6 +25,9 @@
             @endforeach
         </tbody>
     </table>
+    <div style="display: flex; justify-content: center;">
+        {!! $propietarios->links() !!}
+    </div>
     <br>
 
 </div>

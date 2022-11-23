@@ -31,11 +31,6 @@
                 <td>{{$encomienda->proveedor}}</td>
                 <td>{{$encomienda->departamentos->numero}}</td>
                 <td>{{$encomienda->estado}}</td>
-                <!--@foreach($propietarios as $propietario)
-                    @if($encomienda->id_dpto == $propietario->id_dpto)
-                    <td>{{$propietario->correo}}</td>
-                    @endif
-                @endforeach-->
                 @if(auth()->user()->role == 'conserje' or auth()->user()->role == 'mayordomo')
 
                     @if($encomienda->estado == 'sin retirar')
@@ -52,6 +47,10 @@
         </tbody>
 
     </table>
+
+    <div style="display: flex; justify-content: center;">
+        {!! $encomiendas->links() !!}
+    </div>
 
     <br>
 

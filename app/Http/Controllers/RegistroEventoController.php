@@ -12,8 +12,9 @@ class RegistroEventoController extends Controller
 
     public function index()
     {
-        $eventos = SalaEvento::all();
+        //$eventos = SalaEvento::all();
+        $datos['eventos'] = SalaEvento::paginate(6);
 
-        return view('registros.registroSalaEvento', compact('eventos'));
+        return view('registros.registroSalaEvento', $datos);
     }
 }

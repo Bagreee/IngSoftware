@@ -11,9 +11,10 @@ class RegistrosVisitasController extends Controller
     //
 
     public function index(){
-        $visitas = Visita::all();
+        //$visitas = Visita::all();
+        $datos['visitas'] = Visita::paginate(6);
 
-        return view('registros.registroVisita', compact('visitas'));
+        return view('registros.registroVisita', $datos);
     }
 
 }

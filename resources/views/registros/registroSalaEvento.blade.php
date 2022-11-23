@@ -19,6 +19,9 @@
             @endforeach
         </tbody>
     </table>
+    <div style="display: flex; justify-content: center;">
+        {!! $eventos->links() !!}
+    </div>
     <br>
 
 </div>

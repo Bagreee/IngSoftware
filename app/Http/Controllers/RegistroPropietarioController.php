@@ -12,9 +12,10 @@ class RegistroPropietarioController extends Controller
 
     public function index()
     {
-        $propietarios = Propietario::all();
+        //$propietarios = Propietario::all();
+        $datos['propietarios'] = Propietario::paginate(6);
 
-        return view('registros.registroPropietario', compact('propietarios'));
+        return view('registros.registroPropietario', $datos);
     }
 
 }

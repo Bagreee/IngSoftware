@@ -19,6 +19,9 @@
             @endforeach
         </tbody>
     </table>
+    <div style="display: flex; justify-content: center;">
+        {!! $trabajadoresMantenimiento->links() !!}
+    </div>
     <br>
 
 </div>

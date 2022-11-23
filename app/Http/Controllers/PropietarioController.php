@@ -13,9 +13,10 @@ class PropietarioController extends Controller
 
     public function index()
     {
-        $propietarios = Propietario::all();
+        //$propietarios = Propietario::all();
+        $datos['propietarios'] = Propietario::paginate(5);
 
-        return view('propietario.index', compact('propietarios'));
+        return view('propietario.index', $datos);
     }
 
     public function create()

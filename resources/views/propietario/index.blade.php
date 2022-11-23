@@ -30,6 +30,9 @@
             @endforeach
         </tbody>
     </table>
+    <div style="display: flex; justify-content: center;">
+        {!! $propietarios->links() !!}
+    </div>
     <br>
 
     @if(auth()->user()->role == 'admin' or auth()->user()->role == 'mayordomo')
